@@ -1,54 +1,56 @@
 <template>
   <div id="app">
-    <header>
-      <span>Big Six</span>
-    </header>
-    <main>
-      <img src="./assets/logo.png" alt="Vue.js PWA">
-      <router-view></router-view>
-    </main>
+    <v-app>
+      <v-toolbar dark color="pink">
+        <v-toolbar-side-icon @click="openMenu"></v-toolbar-side-icon>
+        <v-toolbar-title class="white--text">Big Six</v-toolbar-title>
+      </v-toolbar>
+      <v-navigation-drawer temporary v-model="drawer" dark absolute>
+        <v-list class="pa-1">
+        </v-list>
+        <v-list class="pt-0" dense>
+          <v-divider></v-divider>
+          <v-list-tile v-for="item in items" :key="item.title" @click="goTo(item.path)">
+            <v-list-tile-action>
+              <v-icon>{{ item.icon }}</v-icon>
+            </v-list-tile-action>
+            <v-list-tile-content>
+              <v-list-tile-title>{{ item.title }}</v-list-tile-title>
+            </v-list-tile-content>
+          </v-list-tile>
+        </v-list>
+      </v-navigation-drawer>
+      <router-view />
+    </v-app>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'app'
+  name: 'app',
+  data () {
+    return {
+      drawer: false,
+      items: [
+        { title: 'Home', icon: 'home', path: '/' },
+        { title: 'Cupones', icon: 'local_offer', path: 'cupons' },
+        { title: 'Sucursales', icon: 'pin_drop', path: 'branches' },
+        { title: 'Productos', icon: 'restaurant', path: 'products' },
+        { title: 'Mi perfil', icon: 'account_circle', path: 'profile' }
+      ]
+    }
+  },
+  methods: {
+    goTo (page) {
+      this.$router.push({ path: page })
+    },
+    openMenu () {
+      this.drawer = true
+    }
+  }
 }
 </script>
 
 <style>
-body {
-  margin: 0;
-}
 
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
-}
-
-main {
-  text-align: center;
-  margin-top: 40px;
-}
-
-header {
-  margin: 0;
-  height: 56px;
-  padding: 0 16px 0 24px;
-  background-color: #35495E;
-  color: #ffffff;
-}
-
-header span {
-  display: block;
-  position: relative;
-  font-size: 20px;
-  line-height: 1;
-  letter-spacing: .02em;
-  font-weight: 400;
-  box-sizing: border-box;
-  padding-top: 16px;
-}
 </style>
