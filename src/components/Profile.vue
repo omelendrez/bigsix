@@ -1,6 +1,6 @@
 <template>
   <v-form v-model="valid">
-
+    <Header />
     <v-text-field label="Nombre" v-model="name" :rules="nameRules" :counter="60" required autocomplete='given-name'></v-text-field>
 
     <v-text-field label="Apellido" v-model="surName" :rules="surNameRules" :counter="60" required autocomplete='family-name'></v-text-field>
@@ -30,8 +30,12 @@
 </template>
 
 <script>
+import Header from './Header'
 export default {
   name: 'profile',
+  components: {
+    Header
+  },
   data() {
     return {
       landscape: false,

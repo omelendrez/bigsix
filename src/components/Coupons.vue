@@ -1,23 +1,33 @@
 <template>
-  <v-carousel :hide-delimiters="true" dark :interval="5000000">
-
+  <v-carousel :hide-delimiters="hideDelimiters" dark :interval="5000000">
+    <Header />
     <v-carousel-item v-for="(item,i) in items" :src="item.src" :key="i">
-      <v-layout align-center justify-center>
-        <h2 class="info--text">Código</h2>
-        <h1 class="info--text">{{item.code}}</h1>
+      <v-layout align-center justify-center class="my">
+        <v-layout align-center justify-center>
+          <h1 class="white--text">
+            <small>Código</small> {{item.code}}</h1>
+        </v-layout>
+        <v-layout align-center justify-center>
+          <v-btn>Usar cupón</v-btn>
+        </v-layout>
       </v-layout>
     </v-carousel-item>
   </v-carousel>
 </template>
 
 <script>
+import Header from './Header'
 export default {
   name: 'coupons',
+  components: {
+    Header
+  },
   data() {
     return {
+      hideDelimiters: true,
       items: [
         {
-          src: '/static/img/macpromo.jpg',
+          src: '/static/img/0.jpg',
           code: '52636'
         },
         {
@@ -35,10 +45,7 @@ export default {
 </script>
 
 <style>
-h1 {
-  font-size: 42pt;
-}
-h2 {
-  font-size: 26pt;
+.my {
+  background: #37474f;
 }
 </style>

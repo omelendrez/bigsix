@@ -1,10 +1,18 @@
 <template>
-  <div class="google-map" :id="mapName"></div>
+  <div>
+    <Header />
+    <div class="google-map" :id="mapName"></div>
+  </div>
 </template>
 
 <script>
+import Header from './Header'
+
 export default {
   name: 'branches',
+  components: {
+    Header
+  },
   data() {
     return {
       mapName: 'googleMap'
