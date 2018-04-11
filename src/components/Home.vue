@@ -1,14 +1,20 @@
 <template>
-  <div class="home">
-    <h1>Home</h1>
-    <h2>Essential Links</h2>
-  </div>
+  <v-parallax src="/static/img/bigsix-portrait.jpg">
+    <Header />
+    <v-layout column align-center justify-center>
+
+    </v-layout>
+  </v-parallax>
 </template>
 
 <script>
+import Header from './Header'
 export default {
   name: 'home',
-  data () {
+  components: {
+    Header
+  },
+  data() {
     return {}
   }
 }
