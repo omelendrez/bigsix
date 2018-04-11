@@ -43,7 +43,7 @@ export default {
       drawer: false,
       items: [
         { title: 'Home', icon: 'home', path: '/' },
-        { title: 'Cupones', icon: 'local_offer', path: 'cupons' },
+        { title: 'Cupones', icon: 'local_offer', path: 'coupons' },
         { title: 'Sucursales', icon: 'pin_drop', path: 'map' },
         { title: 'Productos', icon: 'restaurant', path: 'products' },
         { title: 'Mi perfil', icon: 'account_circle', path: 'profile' }

@@ -4,6 +4,7 @@ import Home from '@/components/Home'
 import Products from '@/components/Products'
 import Map from '@/components/Map'
 import Profile from '@/components/Profile'
+import Coupons from '@/components/Coupons'
 
 import 'vuetify/dist/vuetify.min.css'
 
@@ -30,6 +31,11 @@ export default new Router({
       path: '/profile',
       name: 'Profile',
       component: Profile
+    },
+    {
+      path: '/coupons',
+      name: 'Coupons',
+      component: Coupons
     }
   ]
 })
