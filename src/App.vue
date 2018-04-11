@@ -1,11 +1,9 @@
 <template>
+
   <div id="app">
+
     <v-app>
-      <v-toolbar dark color="pink">
-        <v-toolbar-side-icon @click="openMenu"></v-toolbar-side-icon>
-        <v-toolbar-title class="white--text">Big Six</v-toolbar-title>
-      </v-toolbar>
-      <v-navigation-drawer temporary v-model="drawer" dark absolute>
+      <v-navigation-drawer temporary app v-model="drawer" dark absolute>
         <v-list class="pa-1">
         </v-list>
         <v-list class="pt-0" dense>
@@ -20,31 +18,43 @@
           </v-list-tile>
         </v-list>
       </v-navigation-drawer>
-      <router-view />
+
+      <v-toolbar dark app color="pink">
+        <v-toolbar-side-icon @click="openMenu"></v-toolbar-side-icon>
+        <v-toolbar-title class="white--text">Big Six</v-toolbar-title>
+      </v-toolbar>
+
+      <v-content>
+        <v-container fluid>
+          <router-view></router-view>
+        </v-container>
+      </v-content>
     </v-app>
+
   </div>
+
 </template>
 
 <script>
 export default {
   name: 'app',
-  data () {
+  data() {
     return {
       drawer: false,
       items: [
         { title: 'Home', icon: 'home', path: '/' },
-        { title: 'Cupones', icon: 'local_offer', path: 'cupons' },
-        { title: 'Sucursales', icon: 'pin_drop', path: 'branches' },
+        { title: 'Cupones', icon: 'local_offer', path: 'coupons' },
+        { title: 'Sucursales', icon: 'pin_drop', path: 'map' },
         { title: 'Productos', icon: 'restaurant', path: 'products' },
         { title: 'Mi perfil', icon: 'account_circle', path: 'profile' }
       ]
     }
   },
   methods: {
-    goTo (page) {
+    goTo(page) {
       this.$router.push({ path: page })
     },
-    openMenu () {
+    openMenu() {
       this.drawer = true
     }
   }

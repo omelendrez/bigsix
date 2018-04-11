@@ -6,27 +6,18 @@
 
 <script>
 export default {
-  name: 'products',
+  name: 'coupons',
   data() {
     return {
       items: [
         {
-          src: '/static/img/bkwhopper.jpg'
+          src: '/static/img/hamburger.png'
         },
         {
-          src: '/static/img/coca.jpg'
+          src: '/static/img/patitas.png'
         },
         {
-          src: '/static/img/bkwhopper.jpg'
-        },
-        {
-          src: '/static/img/coca.jpg'
-        },
-        {
-          src: '/static/img/bkwhopper.jpg'
-        },
-        {
-          src: '/static/img/coca.jpg'
+          src: '/static/img/sandwich.png'
         }
       ]
     }
