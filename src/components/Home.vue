@@ -1,8 +1,7 @@
 <template>
-  <v-parallax src="/static/img/bigsix.jpg" height="900">
+  <v-parallax src="/static/img/bigsix-portrait.jpg">
     <v-layout column align-center justify-center>
-      <h1>Big Six</h1>
-      <h4>App cuponera</h4>
+
     </v-layout>
   </v-parallax>
 </template>

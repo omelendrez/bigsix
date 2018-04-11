@@ -3,7 +3,7 @@ import Router from 'vue-router'
 import Home from '@/components/Home'
 import Categories from '@/components/Categories'
 import Products from '@/components/Products'
-import Map from '@/components/Map'
+import Branches from '@/components/Branches'
 import Profile from '@/components/Profile'
 import Coupons from '@/components/Coupons'
 
@@ -29,9 +29,9 @@ export default new Router({
       component: Products
     },
     {
-      path: '/map',
-      name: 'Map',
-      component: Map
+      path: '/branches',
+      name: 'Branches',
+      component: Branches
     },
     {
       path: '/profile',

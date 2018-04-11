@@ -4,28 +4,25 @@
 
 <script>
 export default {
-  name: 'map',
+  name: 'branches',
   data() {
     return {
-      mapName: 'google-map'
+      mapName: 'googleMap'
     }
   },
-  mounted () {
+  mounted() {
     const element = document.getElementById(this.mapName)
     const options = {
-      zoom: 16,
+      zoom: 15,
       center: new google.maps.LatLng(-38.719713, -62.257095)
     }
-    const map = new google.maps.Map(element, options)
+    const googleMap = new google.maps.Map(element, options)
   }
 }
 </script>
 
 <style>
-.google-map {
-  width: 800px;
-  height: 600px;
-  margin: 0 auto;
-  background: gray;
+#googleMap {
+  height: 80vh;
 }
 </style>

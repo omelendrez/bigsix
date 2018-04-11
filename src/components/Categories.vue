@@ -32,37 +32,15 @@ export default {
         },
         { divider: true, inset: true },
         {
-          avatar: '/static/img/patitas.png',
+          avatar: '/static/img/patitas.PNG',
           title: 'Ensaladas'
         },
-        {
-          avatar: '/static/img/hamburger.png',
-          title: 'Combos'
-        },
         { divider: true, inset: true },
         {
-          avatar: '/static/img/sandwich.png',
-          title: 'Bebidas'
+          avatar: '/static/img/sandwich.PNG',
+          title: 'Sandwiches'
         },
-        { divider: true, inset: true },
-        {
-          avatar: '/static/img/hamburger.png',
-          title: 'Ensaladas'
-        },
-        {
-          avatar: '/static/img/hamburger.png',
-          title: 'Combos'
-        },
-        { divider: true, inset: true },
-        {
-          avatar: '/static/img/coca.jpg',
-          title: 'Bebidas'
-        },
-        { divider: true, inset: true },
-        {
-          avatar: '/static/img/hamburger.png',
-          title: 'Ensaladas'
-        }
+        { divider: true, inset: true }
       ]
     }
   },
