@@ -11,7 +11,7 @@ export default {
     return {
       items: [
         {
-          src: '/static/img/hamburger.png'
+          src: '/static/img/macpromo.jpg'
         },
         {
           src: '/static/img/patitas.png'
