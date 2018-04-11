@@ -1,7 +1,6 @@
 <template>
   <div class="products">
     <h1>Productos</h1>
-    <h2>Essential Links</h2>
   </div>
 </template>
 

@@ -6,7 +6,7 @@
     <v-select label="Sexo" v-model="sex" :items='sexItems' single-line></v-select>
     <v-text-field type='date' label="Fecha de nacimiento" v-model="birthDate" required></v-text-field>
     <v-text-field label="D.N.I." v-model="dni" :rules="dniRules" required></v-text-field>
-    <v-btn @click="submit" color="success" :disabled="!valid">
+    <v-btn @click="submit" color="primary" :disabled="!valid">
       enviar
     </v-btn>
     <v-btn @click="clear">reset</v-btn>
