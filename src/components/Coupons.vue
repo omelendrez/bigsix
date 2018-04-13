@@ -24,7 +24,7 @@ export default {
   },
   data() {
     return {
-      hideDelimiters: true,
+      hideDelimiters: false,
       items: [
         {
           src: '/static/img/mac.png',
