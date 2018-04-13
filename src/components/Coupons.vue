@@ -1,8 +1,8 @@
 <template>
-  <v-carousel :hide-delimiters="hideDelimiters" dark :interval="5000000">
+  <v-carousel :hide-delimiters="hideDelimiters" dark :interval="5000000" style="height:100%">
     <Header />
     <v-carousel-item v-for="(item,i) in items" :src="item.src" :key="i">
-      <v-layout align-center justify-center class="my">
+      <v-layout align-center justify-center class="code">
         <v-layout align-center justify-center>
           <h1 class="white--text">
             <small>Código</small> {{item.code}}</h1>
@@ -27,16 +27,24 @@ export default {
       hideDelimiters: true,
       items: [
         {
-          src: '/static/img/0.jpg',
-          code: '52636'
+          src: '/static/img/mac.png',
+          code: '414x676 png'
         },
         {
-          src: '/static/img/patitas.PNG',
-          code: '75462'
+          src: '/static/img/mac2.png',
+          code: '414x736 png'
         },
         {
-          src: '/static/img/sandwich.PNG',
-          code: '11748'
+          src: '/static/img/mac3.png',
+          code: '320x497 png'
+        },
+        {
+          src: '/static/img/mac4.png',
+          code: '1440x2240 png'
+        },
+        {
+          src: '/static/img/mac5.jpg',
+          code: '1440x2240 jpg'
         }
       ]
     }
@@ -45,7 +53,12 @@ export default {
 </script>
 
 <style>
-.my {
+.code {
   background: #37474f;
+  opacity: 0.8;
+}
+.jumbotron__image {
+  height: 100%;
+  width: 100%;
 }
 </style>

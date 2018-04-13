@@ -31,6 +31,6 @@ export default {
 
 <style>
 #googleMap {
-  height: 80vh;
+  height: 93vh;
 }
 </style>
