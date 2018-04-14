@@ -1,5 +1,5 @@
 <template>
-  <v-parallax src="/static/img/bigsix-portrait.jpg" style="height:100%">
+  <v-parallax src="/static/img/image1.png">
     <Header />
     <v-layout column align-center justify-center>
 

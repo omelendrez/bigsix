@@ -26,7 +26,8 @@ export default new Router({
     {
       path: '/products',
       name: 'Products',
-      component: Products
+      component: Products,
+      props: true
     },
     {
       path: '/branches',

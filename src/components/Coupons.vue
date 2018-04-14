@@ -1,5 +1,5 @@
 <template>
-  <v-carousel :hide-delimiters="hideDelimiters" dark :interval="5000000" style="height:100%">
+  <v-carousel :hide-delimiters="hideDelimiters" :interval="5000000"  style="height: 100vh">
     <Header />
     <v-carousel-item v-for="(item,i) in items" :src="item.src" :key="i">
       <v-layout align-center justify-center class="code">
@@ -27,24 +27,12 @@ export default {
       hideDelimiters: false,
       items: [
         {
-          src: '/static/img/mac.png',
-          code: '414x676 png'
+          src: '/static/img/image2.png',
+          code: '123456'
         },
         {
-          src: '/static/img/mac2.png',
-          code: '414x736 png'
-        },
-        {
-          src: '/static/img/mac3.png',
-          code: '320x497 png'
-        },
-        {
-          src: '/static/img/mac4.png',
-          code: '1440x2240 png'
-        },
-        {
-          src: '/static/img/mac5.jpg',
-          code: '1440x2240 jpg'
+          src: '/static/img/image3.png',
+          code: '234567'
         }
       ]
     }
@@ -58,7 +46,8 @@ export default {
   opacity: 0.8;
 }
 .jumbotron__image {
-  height: 100%;
+  top: 160px;
   width: 100%;
 }
+
 </style>
