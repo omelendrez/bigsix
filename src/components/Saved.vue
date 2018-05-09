@@ -1,25 +1,28 @@
 <template>
-  <v-carousel :hide-delimiters="hideDelimiters" :interval="20000" :cycle="cycle" style="height: 100%">
-    <Header menuType="coupon" />
+  <v-carousel :hide-delimiters="hideDelimiters" :interval="interval" :cycle="cycle" style="height: 100%">
+    <Header />
     <v-carousel-item v-for="(item,i) in items" :src="item.src" :key="i">
       <v-layout align-center justify-center class="code-container">
         <h1 class="white--text code">
           <small>Código</small> {{item.code}}
         </h1>
-        <v-btn icon dark @click="addFavorite(item)">
-          <v-icon>favorite</v-icon>
+        <v-btn icon dark @click="deleteCoupon(item)">
+          <v-icon>cancel</v-icon>
         </v-btn>
       </v-layout>
     </v-carousel-item>
+    <v-alert :value="empty" type="error">
+      No tenés cupones guardados
+    </v-alert>
     <v-snackbar :timeout="timeout" color="error" :top="y === 'top'" :bottom="y === 'bottom'" :right="x === 'right'" :left="x === 'left'" v-model="snackbar">
-      {{ text }} {{ name }}
+      Cupón {{ name }} {{ text }}
     </v-snackbar>
   </v-carousel>
 </template>
 
 <script>
 import Header from './Header'
-import { saveCoupon } from './utils'
+import { getCoupons, removeCoupon } from './utils'
 export default {
   name: 'coupons',
   components: {
@@ -32,33 +35,27 @@ export default {
       x: null,
       mode: 'vertical',
       timeout: 3000,
-      text: 'Felicitaciones! Se ha guardado el cupón!',
-      logo: './static/img/header.png',
+      text: 'ha sido eliminado!!',
+      name: null,
+      empty: false,
+      interval: 1,
       cycle: false,
       hideDelimiters: false,
-      name: '',
-      items: [
-        {
-          src: '/static/img/coupon1.png',
-          code: 'QB-01',
-          name: 'Compbo QB',
-          from: '2018-05-01',
-          to: '2018-05-05'
-        },
-        {
-          src: '/static/img/coupon2.png',
-          code: 'BH-02',
-          name: 'Menú Bahiense',
-          from: '2018-05-01',
-          to: '2018-05-05'
-        }
-      ]
+      items: []
     }
   },
+  created () {
+    const coupons = getCoupons()
+    this.items = coupons
+    this.empty = coupons.length === 0
+  },
   methods: {
-    addFavorite (item) {
+    deleteCoupon (item) {
       this.name = item.name
-      const error = saveCoupon(item)
+      const error = removeCoupon(item)
+      const coupons = getCoupons()
+      this.items = coupons
+      this.empty = coupons.length === 0
       this.snackbar = !this.snackbar
     }
   }
@@ -80,7 +77,6 @@ export default {
   top: 250dp;
   width: 100%;
 }
-
 .rojo {
   color: #ee3542;
 }

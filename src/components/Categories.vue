@@ -4,7 +4,7 @@
     <template v-for="(item, index) in items">
       <v-subheader v-if="item.header" :key="item.header">{{ item.header }}</v-subheader>
       <v-divider v-else-if="item.divider" :inset="item.inset" :key="index"></v-divider>
-      <v-list-tile avatar v-else :key="item.title" @click="goTo">
+      <v-list-tile avatar v-else :key="item.title" @click="goTo(item)">
         <v-list-tile-avatar>
           <img :src="item.avatar">
         </v-list-tile-avatar>
@@ -29,36 +29,42 @@ export default {
   components: {
     Header
   },
-  data() {
+  data () {
     return {
       items: [
         {
-          avatar: '/static/img/bkwhopper.jpg',
-          title: 'Combos'
+          avatar: '/static/img/cat-image4.png',
+          title: 'Hamburguesas',
+          id: 1
         },
         { divider: true, inset: true },
         {
-          avatar: '/static/img/coca.jpg',
-          title: 'Bebidas'
+          avatar: '/static/img/cat-image7.png',
+          title: 'Bebidas',
+          id: 2
         },
         { divider: true, inset: true },
         {
-          avatar: '/static/img/patitas.PNG',
-          title: 'Ensaladas'
+          avatar: '/static/img/cat-image8.png',
+          title: 'Ensaladas',
+          id: 3
         },
         { divider: true, inset: true },
         {
-          avatar: '/static/img/sandwich.PNG',
-          title: 'Sandwiches'
+          avatar: '/static/img/cat-image9.png',
+          title: 'Dulces',
+          id: 4
         },
-        { divider: true, inset: true }
+        {
+          divider: true,
+          inset: true
+        }
       ]
     }
   },
   methods: {
-    goTo(e) {
-      e.preventDefault()
-      this.$router.push({ path: '/products' })
+    goTo (categoryItem) {
+      this.$router.push({ name: 'Products', params: { categoryItem: categoryItem } })
     }
   }
 }
