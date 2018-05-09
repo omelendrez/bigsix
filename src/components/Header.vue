@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-navigation-drawer temporary app v-model="drawer" dark absolute>
+    <v-navigation-drawer temporary app v-model="drawer" dark class="rojo" absolute>
       <v-list class="pa-4">
       </v-list>
       <v-list class="pt-0" dense>
@@ -15,12 +15,12 @@
         </v-list-tile>
       </v-list>
     </v-navigation-drawer>
-    <v-toolbar dark app color="red">
-      <v-btn icon v-if="isSubMenu" @click="goBack">
+    <v-toolbar dark app class="rojo">
+      <v-btn icon v-if="isProduct" @click="goBack">
         <v-icon>arrow_back</v-icon>
       </v-btn>
-      <v-toolbar-side-icon @click="openMenu" v-if="!isSubMenu"></v-toolbar-side-icon>
-      <v-toolbar-title class="white--text">
+      <v-toolbar-side-icon @click="openMenu" v-if="!isProduct"></v-toolbar-side-icon>
+      <v-toolbar-title>
         <img :src="logo" />
       </v-toolbar-title>
     </v-toolbar>
@@ -30,33 +30,34 @@
 <script>
 export default {
   props: ['menuType'],
-  data() {
+  data () {
     return {
-      logo: './static/img/logo.jpg',
+      logo: './static/img/header.png',
       drawer: false,
       items: [
         { title: 'Home', icon: 'home', path: '/' },
         { title: 'Cupones', icon: 'local_offer', path: 'coupons' },
-        { title: 'Sucursales', icon: 'pin_drop', path: 'branches' },
-        { title: 'Productos', icon: 'restaurant', path: 'categories' },
-        { title: 'Mi perfil', icon: 'account_circle', path: 'profile' }
+        { title: 'Guardados', icon: 'favorite', path: 'saved' }
+        // { title: 'Sucursales', icon: 'pin_drop', path: 'branches' },
+        // { title: 'Productos', icon: 'restaurant', path: 'categories' },
+        // { title: 'Mi perfil', icon: 'account_circle', path: 'profile' }
       ]
     }
   },
   computed: {
-    isSubMenu() {
-      return this.menuType === 'sub'
+    isProduct () {
+      return this.menuType === 'product'
     }
   },
   methods: {
-    goTo(page) {
+    goTo (page) {
       this.$router.push({ path: page })
     },
-    goBack(e) {
+    goBack (e) {
       e.preventDefault()
       this.$router.go(-1)
     },
-    openMenu() {
+    openMenu () {
       this.drawer = true
     }
   }
@@ -64,7 +65,9 @@ export default {
 </script>
 
 <style scoped>
-
+.rojo {
+  background-color: #ee3542 !important;
+}
 </style>
 
 

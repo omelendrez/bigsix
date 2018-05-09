@@ -2,7 +2,7 @@
   <v-card no-body>
     <h1 class="category-title">{{title}}</h1>
     <v-carousel :hide-delimiters="hideDelimiters" :interval="5000000" style="height: 90vh">
-      <Header menuType="sub" />
+      <Header menuType="product" />
       <v-carousel-item v-for="(item,i) in categoryItems" :src="item.image" :key="i">
         <v-layout justify-center class="product-name">
           {{item.name}}
@@ -104,7 +104,7 @@ export default {
 }
 
 .jumbotron__image {
-  top: 30%;
+  top: 200px;
   width: 100vw;
 }
 

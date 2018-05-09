@@ -6,6 +6,7 @@ import Products from '@/components/Products'
 import Branches from '@/components/Branches'
 import Profile from '@/components/Profile'
 import Coupons from '@/components/Coupons'
+import Saved from '@/components/Saved'
 
 import 'vuetify/dist/vuetify.min.css'
 
@@ -43,6 +44,11 @@ export default new Router({
       path: '/coupons',
       name: 'Coupons',
       component: Coupons
+    },
+    {
+      path: '/saved',
+      name: 'Saved',
+      component: Saved
     }
   ]
 })
