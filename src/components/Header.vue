@@ -32,7 +32,7 @@ export default {
   props: ['menuType'],
   data () {
     return {
-      logo: './static/img/header.png',
+      logo: './static/img/header sin fondo.png',
       drawer: false,
       items: [
         { title: 'Home', icon: 'home', path: '/' },
@@ -51,7 +51,7 @@ export default {
   },
   methods: {
     goTo (page) {
-      this.$router.push({ path: page })
+      this.$router.replace({ path: page })
     },
     goBack (e) {
       e.preventDefault()
@@ -67,6 +67,9 @@ export default {
 <style scoped>
 .rojo {
   background-color: #ee3542 !important;
+}
+.toolbar__title img {
+  height: 32px;
 }
 </style>
 
