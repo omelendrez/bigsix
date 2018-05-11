@@ -1,7 +1,8 @@
 <template>
-  <v-carousel :hide-delimiters="hideDelimiters" :interval="20000" :cycle="cycle" style="height: 100%">
-    <Header menuType="coupon" />
-    <v-carousel-item v-for="(item,i) in items" :src="item.src" :key="i">
+  <v-carousel :hide-delimiters="hideDelimiters" :interval="interval" :cycle="cycle" style="height: 100%;" class="carousel">
+    <Header/>
+    <v-carousel-item v-for="(item,i) in items" :key="i">
+      <img :src="item.src" class="img">
       <v-layout align-center justify-center class="code-container">
         <h1 class="white--text code">
           <small>Código</small> {{item.code}}
@@ -11,8 +12,9 @@
         </v-btn>
       </v-layout>
     </v-carousel-item>
-    <v-snackbar :timeout="timeout" color="error" :top="y === 'top'" :bottom="y === 'bottom'" :right="x === 'right'" :left="x === 'left'" v-model="snackbar">
+    <v-snackbar :timeout="timeout" :color="color" :multi-line="mode === 'multi-line'" :vertical="mode === 'vertical'" v-model="snackbar">
       {{ text }} {{ name }}
+      <v-btn dark flat @click.native="snackbar = false">Cerrar</v-btn>
     </v-snackbar>
   </v-carousel>
 </template>
@@ -27,25 +29,29 @@ export default {
   },
   data () {
     return {
+      color: 'error',
       snackbar: false,
       y: 'top',
       x: null,
       mode: 'vertical',
-      timeout: 3000,
-      text: 'Felicitaciones! Se ha guardado el cupón!',
+      timeout: 5000,
+      text: 'Felicitaciones! Se ha guardado el cupón',
       logo: './static/img/header.png',
       cycle: false,
-      hideDelimiters: false,
+      interval: 1,
+      hideDelimiters: true,
       name: '',
       items: [
         {
+          id: 1,
           src: '/static/img/coupon1.png',
           code: 'QB-01',
-          name: 'Compbo QB',
+          name: 'Combo QB',
           from: '2018-05-01',
           to: '2018-05-05'
         },
         {
+          id: 2,
           src: '/static/img/coupon2.png',
           code: 'BH-02',
           name: 'Menú Bahiense',
@@ -65,23 +71,24 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .code-container {
   position: absolute;
-  bottom: 64dp;
   width: 100%;
-  background-color: #ee3542;
+  bottom: 0;
 }
 .code {
-  font-size: 3em;
+  font-size: 2em;
   margin: 0 auto;
 }
-.jumbotron__image {
-  top: 250dp;
+.img {
+  position: absolute;
   width: 100%;
 }
-
 .rojo {
   color: #ee3542;
+}
+.carousel {
+  background-color: #ee3542;
 }
 </style>
