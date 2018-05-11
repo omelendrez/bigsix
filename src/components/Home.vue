@@ -14,7 +14,7 @@
 
 <script>
 import Header from './Header'
-import { getCoupons } from './utils'
+import { saveAccess, getCoupons } from './utils'
 export default {
   name: 'home',
   components: {
@@ -47,6 +47,7 @@ export default {
     }
   },
   created () {
+    saveAccess()
     const coupons = getCoupons()
     if (coupons.length) {
       this.text = `Tenés ${coupons.length} cupones guardados`

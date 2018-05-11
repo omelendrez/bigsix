@@ -43,6 +43,7 @@ export default {
       name: '',
       items: [
         {
+          id: 1,
           src: '/static/img/coupon1.png',
           code: 'QB-01',
           name: 'Combo QB',
@@ -50,6 +51,7 @@ export default {
           to: '2018-05-05'
         },
         {
+          id: 2,
           src: '/static/img/coupon2.png',
           code: 'BH-02',
           name: 'Menú Bahiense',
