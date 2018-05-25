@@ -1,5 +1,5 @@
 <template>
-  <v-carousel :hide-delimiters="hideDelimiters" :interval="interval" :cycle="cycle" style="height: 100%;" class="carousel">
+  <v-carousel :hide-delimiters="hideDelimiters" :cycle="cycle" style="height: 100%;" class="carousel">
     <Header/>
     <v-carousel-item v-for="(item,i) in items" :key="i">
       <img :src="item.src" class="img">
@@ -38,7 +38,6 @@ export default {
       text: 'Felicitaciones! Se ha guardado el cupón',
       logo: './static/img/header.png',
       cycle: false,
-      interval: 1,
       hideDelimiters: true,
       name: '',
       items: [
