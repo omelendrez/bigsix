@@ -47,3 +47,8 @@ export function getCoupons () {
   const coupons = saved ? JSON.parse(saved) : []
   return coupons
 }
+
+export function sendVibration () {
+  navigator.vibrate = navigator.vibrate || navigator.webkitVibrate || navigator.mozVibrate || navigator.msVibrate
+  navigator.vibrate([500, 300, 100])
+}
