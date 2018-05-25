@@ -17,13 +17,14 @@
     </v-alert>
     <v-snackbar :timeout="timeout" :color="color" :multi-line="mode === 'multi-line'" :vertical="mode === 'vertical'" v-model="snackbar">
       Cupón {{ name }} {{ text }}
+      <v-btn dark flat @click.native="snackbar = false">Cerrar</v-btn>
     </v-snackbar>
   </v-carousel>
 </template>
 
 <script>
 import Header from './Header'
-import { getCoupons, removeCoupon } from './utils'
+import { getCoupons, removeCoupon, sendVibration } from './utils'
 export default {
   name: 'coupons',
   components: {
@@ -59,6 +60,7 @@ export default {
       this.items = coupons
       this.empty = coupons.length === 0
       this.snackbar = !this.snackbar
+      sendVibration()
     }
   }
 }

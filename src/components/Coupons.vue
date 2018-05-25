@@ -21,7 +21,7 @@
 
 <script>
 import Header from './Header'
-import { saveCoupon } from './utils'
+import { saveCoupon, sendVibration } from './utils'
 export default {
   name: 'coupons',
   components: {
@@ -66,6 +66,7 @@ export default {
       this.name = item.name
       const error = saveCoupon(item)
       this.snackbar = !this.snackbar
+      sendVibration()
     }
   }
 }
