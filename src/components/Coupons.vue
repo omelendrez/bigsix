@@ -86,9 +86,7 @@ export default {
   position: absolute;
   width: 100%;
 }
-.rojo {
-  color: #ee3542;
-}
+
 .carousel {
   background-color: #ee3542;
 }

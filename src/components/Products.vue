@@ -1,7 +1,7 @@
 <template>
   <v-card no-body>
     <h1 class="category-title">{{title}}</h1>
-    <v-carousel :hide-delimiters="hideDelimiters" :interval="5000000" style="height: 90vh">
+    <v-carousel :hide-delimiters="hideDelimiters" :interval="5000000" style="height: 100%">
       <Header menuType="product" />
       <v-carousel-item v-for="(item,i) in categoryItems" :src="item.image" :key="i">
         <v-layout justify-center class="product-name">
@@ -32,50 +32,44 @@ export default {
         {
           name: 'Big LT',
           description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-          image: '/static/img/image4.png',
+          image: '/static/img/big lt.png',
           categoryId: 1
         },
         {
-          name: 'Big Triple',
+          name: 'Big Mila',
           description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-          image: '/static/img/image5.png',
+          image: '/static/img/big mila.png',
           categoryId: 1
         },
         {
-          name: 'Coca Cola s/azúcar',
+          name: 'Pork de Luxe',
           description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-          image: '/static/img/image6.png',
-          categoryId: 2
+          image: '/static/img/PORKDELUXE.png',
+          categoryId: 1
         },
         {
-          name: 'Coca Cola normal',
+          name: 'Lomo Clásico',
           description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-          image: '/static/img/image7.png',
-          categoryId: 2
+          image: '/static/img/lomo clasico.png',
+          categoryId: 1
         },
         {
-          name: 'De la huerta',
+          name: 'QB',
           description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-          image: '/static/img/image8.png',
-          categoryId: 3
+          image: '/static/img/qb.png',
+          categoryId: 1
         },
         {
-          name: 'Flan casero',
+          name: 'Mila Caprese',
           description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-          image: '/static/img/image9.png',
-          categoryId: 4
+          image: '/static/img/mila caprese.png',
+          categoryId: 1
         },
         {
-          name: 'Sprite lata',
+          name: 'Bondiola de Cerdo',
           description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-          image: '/static/img/image10.png',
-          categoryId: 2
-        },
-        {
-          name: 'Sprite botella',
-          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-          image: '/static/img/image11.png',
-          categoryId: 2
+          image: '/static/img/bondiola de cerdo.png',
+          categoryId: 1
         }
       ]
     }
@@ -103,11 +97,6 @@ export default {
   z-index: 99;
 }
 
-.jumbotron__image {
-  top: 200px;
-  width: 100vw;
-}
-
 .product-name {
   font-size: 2em;
   font-weight: bold;
@@ -123,4 +112,12 @@ export default {
   text-justify: inter-word;
 }
 
+.img {
+  position: absolute;
+  width: 100%;
+}
+
+.carousel {
+  background-color: #ee3542;
+}
 </style>
