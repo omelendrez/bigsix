@@ -57,7 +57,7 @@ export default {
     const alem = { lat: -38.712448, lng: -62.261814 }
     const shopping = { lat: -38.700107, lng: -62.241468 }
     this.addMarker(donado, googleMap, 'Big Six', 'Donado 28')
-    this.addMarker(alem, googleMap, 'Big Six Premium', 'Av. Alem 229')
+    // this.addMarker(alem, googleMap, 'Big Six Premium', 'Av. Alem 229')
     this.addMarker(shopping, googleMap, 'Big Six', 'Bahía Plaza Shopping')
   }
 }
