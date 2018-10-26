@@ -54,7 +54,7 @@ export default {
     }
     const googleMap = new google.maps.Map(element, options)
     const donado = { lat: -38.720513, lng: -62.264677 }
-    const alem = { lat: -38.712448, lng: -62.261814 }
+    // const alem = { lat: -38.712448, lng: -62.261814 }
     const shopping = { lat: -38.700107, lng: -62.241468 }
     this.addMarker(donado, googleMap, 'Big Six', 'Donado 28')
     // this.addMarker(alem, googleMap, 'Big Six Premium', 'Av. Alem 229')
