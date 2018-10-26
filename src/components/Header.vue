@@ -38,7 +38,7 @@ export default {
         { title: 'Home', icon: 'home', path: '/' },
         { title: 'Cupones', icon: 'local_offer', path: 'coupons' },
         { title: 'Guardados', icon: 'favorite', path: 'saved' },
-        { title: 'Sucursales', icon: 'pin_drop', path: 'branches' },
+        { title: 'Locales', icon: 'pin_drop', path: 'branches' },
         { title: 'Productos', icon: 'restaurant', path: 'categories' }
         // { title: 'Mi perfil', icon: 'account_circle', path: 'profile' }
       ]

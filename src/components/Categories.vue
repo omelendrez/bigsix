@@ -1,24 +1,12 @@
 <template>
-  <v-list>
+  <v-container grid-list-md text-xs-center class="grid-list">
     <Header menuType="cat" />
-    <template v-for="(item, index) in items">
-      <v-subheader v-if="item.header" :key="item.header">{{ item.header }}</v-subheader>
-      <v-divider v-else-if="item.divider" :inset="item.inset" :key="index"></v-divider>
-      <v-list-tile avatar v-else :key="item.title" @click="goTo(item)">
-        <v-list-tile-avatar>
-          <img :src="item.avatar">
-        </v-list-tile-avatar>
-        <v-list-tile-content>
-          <v-list-tile-title v-html="item.title"></v-list-tile-title>
-        </v-list-tile-content>
-        <v-list-tile-action>
-          <v-btn icon ripple>
-            <v-icon color="grey lighten-1">keyboard_arrow_right</v-icon>
-          </v-btn>
-        </v-list-tile-action>
-      </v-list-tile>
-    </template>
-  </v-list>
+    <v-layout row wrap>
+      <v-flex v-for='item in items' :key='item.id' xs6>
+        <img :src="item.avatar" class="image" @click="goTo(item)" ripple>
+      </v-flex>
+    </v-layout>
+  </v-container>
 </template>
 
 <script>
@@ -33,31 +21,19 @@ export default {
     return {
       items: [
         {
-          avatar: '/static/img/cat-image4.png',
+          avatar: '/static/img/hambur.png',
           title: 'Hamburguesas',
           id: 1
         },
-        { divider: true, inset: true },
         {
-          avatar: '/static/img/cat-image7.png',
-          title: 'Bebidas',
+          avatar: '/static/img/carnes.png',
+          title: 'Carnes',
           id: 2
         },
-        { divider: true, inset: true },
         {
-          avatar: '/static/img/cat-image8.png',
-          title: 'Ensaladas',
+          avatar: '/static/img/frias.png',
+          title: 'Opciones Frías',
           id: 3
-        },
-        { divider: true, inset: true },
-        {
-          avatar: '/static/img/cat-image9.png',
-          title: 'Dulces',
-          id: 4
-        },
-        {
-          divider: true,
-          inset: true
         }
       ]
     }
@@ -70,6 +46,12 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped>
+.grid-list {
+  background-color: #eaeaea;
+  height: 100%;
+}
+.image {
+  width: 90%;
+}
 </style>

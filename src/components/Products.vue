@@ -1,18 +1,19 @@
 <template>
-  <v-card no-body>
-    <h1 class="category-title">{{title}}</h1>
-    <v-carousel :hide-delimiters="hideDelimiters" :interval="5000000" style="height: 100%">
-      <Header menuType="product" />
-      <v-carousel-item v-for="(item,i) in categoryItems" :src="item.image" :key="i">
+  <v-carousel :hide-delimiters="hideDelimiters" :hide-controls="hideControls" :cycle="cycle" style="height: 100%">
+    <h1 class="category-title" v-if="name" >{{title}}</h1>
+    <Header menuType="product" />
+    <v-carousel-item v-for="(item,i) in categoryItems" class="product" :key="i">
+      <div class="product-content">
+        <img :src="item.image" class="img">
         <v-layout justify-center class="product-name">
           {{item.name}}
         </v-layout>
         <v-layout align-center justify-center class="product-description">
           {{item.description}}
         </v-layout>
-      </v-carousel-item>
-    </v-carousel>
-  </v-card>
+      </div>
+    </v-carousel-item>
+  </v-carousel>
 </template>
 
 <script>
@@ -26,6 +27,8 @@ export default {
   data () {
     return {
       hideDelimiters: true,
+      hideControls: true,
+      cycle: false,
       title: this.categoryItem.title,
       categoryItems: [],
       items: [
@@ -51,7 +54,7 @@ export default {
           name: 'Lomo Clásico',
           description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
           image: '/static/img/lomo clasico.png',
-          categoryId: 1
+          categoryId: 2
         },
         {
           name: 'QB',
@@ -63,13 +66,19 @@ export default {
           name: 'Mila Caprese',
           description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
           image: '/static/img/mila caprese.png',
-          categoryId: 1
+          categoryId: 2
         },
         {
           name: 'Bondiola de Cerdo',
           description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
           image: '/static/img/bondiola de cerdo.png',
-          categoryId: 1
+          categoryId: 2
+        },
+        {
+          name: 'En construcción',
+          description: 'Gracias por tu paciencia',
+          image: '/static/img/en construccion.png',
+          categoryId: 3
         }
       ]
     }
@@ -86,38 +95,27 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .category-title {
-  width: 100vw;
-  height: auto;
-  top: 2%;
   text-align: center;
+  font-size: 2em;
+}
+
+.product {
+  top: 16px;
   position: absolute;
-  font-size: 2em;
-  z-index: 99;
 }
-
 .product-name {
-  font-size: 2em;
+  font-size: 2.4em;
   font-weight: bold;
-  margin-top: 86%;
-  color: #000;
-  margin-bottom: 18px;
-}
-
-.product-description {
-  margin-left: 18px;
-  margin-right: 18px;
-  text-align: justify;
-  text-justify: inter-word;
 }
 
 .img {
-  position: absolute;
   width: 100%;
 }
 
-.carousel {
-  background-color: #ee3542;
+.product-description {
+  margin-left: 16px;
+  margin-right: 16px;
 }
 </style>
