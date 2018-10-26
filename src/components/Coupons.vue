@@ -63,7 +63,7 @@ export default {
   methods: {
     addFavorite (item) {
       this.name = item.name
-      const error = saveCoupon(item)
+      saveCoupon(item)
       this.snackbar = !this.snackbar
       sendVibration()
     }
