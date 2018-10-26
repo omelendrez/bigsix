@@ -55,7 +55,7 @@ export default {
   methods: {
     deleteCoupon (item) {
       this.name = item.name
-      const error = removeCoupon(item)
+      removeCoupon(item)
       const coupons = getCoupons()
       this.items = coupons
       this.empty = coupons.length === 0

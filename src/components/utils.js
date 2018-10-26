@@ -11,7 +11,7 @@ export function saveCoupons () {
     const coupon = coupons[i]
     ids.push(coupon.id)
   }
-  const url = ids.length ? ids.join(',') : 'none'
+  // const url = ids.length ? ids.join(',') : 'none'
   HTTP.post('?action=coupons&coupons=' + ids.join(','))
 }
 
@@ -19,7 +19,7 @@ export function saveCoupon (item) {
   let error = 0
   const localStorage = window.localStorage
   error = !localStorage ? 1 : 0
-  const saved = localStorage.getItem('coupons')
+  const saved = error ? false : localStorage.getItem('coupons')
   const coupons = saved ? JSON.parse(saved) : []
   error = (coupons.find(savedItem => savedItem.code === item.code)) ? 2 : error
   if (!error) {
